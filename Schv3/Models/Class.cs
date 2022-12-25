@@ -10,7 +10,8 @@ namespace Schv3.Models
         [Required] public Teacher Id_Teacher { get; set; }
         [Required] public int Id_Classroom { get; set; }
         [Required] public int ClassType { get; set; }
-        [Required] public List<Group> Group_Code { get; set; }
+        //[Required] public List<Group> Group_Code { get; set; }
         public int Comment { get; set; }
+        [Required] public Group Group_Code { get; set; }
     }
 }

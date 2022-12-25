@@ -82,19 +82,6 @@ namespace Schv3.Query
             }
         }
 
-        public static List<string> GetGroupCodeList(string search)
-        {
-            using (var db = new AppDataDbContext())
-            {
-                var query = from Group in db.Groups
-                            select Group.GroupCode;
-                if (query.ToList<string>() is List<string>)
-                    return query.ToList<string>();
-                else return null;
-            }
-        }
-
-
         public static List<Teacher> GetTeacherList()
         {
             using (var db = new AppDataDbContext())
@@ -148,17 +135,17 @@ namespace Schv3.Query
             using (var db = new AppDataDbContext())
             {
                 var query = from Class in db.Classes
-                            where Class.Id == search.Id_1Class ||
-                            Class.Id == search.Id_2Class ||
-                            Class.Id == search.Id_3Class ||
-                            Class.Id == search.Id_4Class ||
-                            Class.Id == search.Id_5Class ||
-                            Class.Id == search.Id_6Class ||
-                            Class.Id == search.Id_7Class ||
-                            Class.Id == search.Id_8Class
+                            where Class.Id == search.Id_1Class.Id ||
+                            Class.Id == search.Id_2Class.Id ||
+                            Class.Id == search.Id_3Class.Id ||
+                            Class.Id == search.Id_4Class.Id ||
+                            Class.Id == search.Id_5Class.Id ||
+                            Class.Id == search.Id_6Class.Id ||
+                            Class.Id == search.Id_7Class.Id ||
+                            Class.Id == search.Id_8Class.Id
                             select Class;
-                if (query.ToList<Subject>() is List<Subject>)
-                    return query.ToList<Subject>();
+                if (query.ToList<Class>() is List<Class>)
+                    return query.ToList<Class>();
                 else return null;
             }
         }
