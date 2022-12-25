@@ -6,6 +6,11 @@
     margin-bottom:1vh;
 }
 
+.schedule_add_item button {
+    margin-top: 1vh;
+    margin-bottom: 1vh;
+}
+
 input[type=range] {
     width: 30%;
     margin-left: 1vh;

@@ -7,15 +7,20 @@
     switch (e.id) {
         case 'AddSubjBtn':
             page = 'AddSubj';
+            $('.modal-title').html("Добавить предмет");
             break;
         case 'AddGroupBtn':
             page = 'AddGroup';
+            $('.modal-title').html("Добавить группу");
             break;
         case 'AddTeacherBtn':
             page = 'AddTeacher';
+            $('.modal-title').html("Добавить преподавателя");
             break;
         case 'AddClassroomBtn':
             page = 'AddClassroom'
+            $('.modal-title').html("Добавить аудиторию");
+            break;
         default:
             break;
     }
@@ -34,9 +39,12 @@
 }
 
 function AddToDB() {
-
 }
 
 function SchedToDB() {
 
+}
+
+function ModalClose() {
+    $('#AddFormModal').modal('hide');
 }

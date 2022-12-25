@@ -1,0 +1,3 @@
+﻿function Search(string str) {
+
+}
