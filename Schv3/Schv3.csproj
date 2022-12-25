@@ -26,4 +26,8 @@
     <Resource Include="wwwroot\favicon.ico" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Migrations\" />
+  </ItemGroup>
+
 </Project>
