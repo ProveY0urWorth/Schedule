@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Schv3.Models;
 using System.Diagnostics;
+using Schv3.Query;
 
 namespace Schv3.Controllers
 {
