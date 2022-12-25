@@ -3,41 +3,42 @@
     For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 *@
 
-<form>
-    <div>
+<form method="post">
+    <div class="schedule_add_item">
         <label>
             Код группы
         </label>
-        <input type="text" placeholder="ИС/б-20-1-о" id="groupID" />
+        <input type="text" placeholder=" ИС/б-20-1-о" id="groupID" class="rounded-pill" />
     </div>
-    <div>
+    <div class="schedule_add_item">
         <label>
             Количество студентов
         </label>
-        <input type="text" placeholder="25" id="groupCount" />
+        <input type="text" placeholder=" 25" id="groupCount" class="rounded-pill" />
     </div>
-    <div>
+    <div class="schedule_add_item">
         <label>
             Институт
         </label>
-        <input type="text" placeholder="ИИТ" id="groupInstitute" />
+        <input type="text" placeholder=" ИИТ" id="groupInstitute" class="rounded-pill" />
     </div>
-    <div>
+    <div class="schedule_add_item">
         <label>
             Курс группы
         </label>
-        <input type="text" placeholder="2" id="groupCourse" />
+        <input type="text" placeholder=" 2" id="groupCourse" class="rounded-pill" />
     </div>
-    <div>
+    <div class="schedule_add_item">
         <label>
             Уровень высшего образования группы
         </label>
-        <input type="text" placeholder="Бакалавриат" id="groupGrade" />
+        <input type="text" placeholder=" Бакалавриат" id="groupGrade" class="rounded-pill" />
     </div>
-    <div>
+    <div class="schedule_add_item">
         <label>
             Форма обучения группы
         </label>
-        <input type="text" placeholder="Очная" id="groupForm" />
+        <input type="text" placeholder=" Очная" id="groupForm" class="rounded-pill" />
     </div>
+    <button type="submit" class="btn btn-primary" style="float:right">Сохранить</button>
 </form>
