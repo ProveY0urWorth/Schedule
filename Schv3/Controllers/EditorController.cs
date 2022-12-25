@@ -29,6 +29,30 @@ namespace Schv3.Controllers
         }
 
         [Authorize]
+        public IActionResult AddGroup()
+        {
+            return PartialView("AddGroup");
+        }
+
+        [Authorize]
+        public IActionResult AddSubj()
+        {
+            return PartialView("AddSubj");
+        }
+
+        [Authorize]
+        public IActionResult AddTeacher()
+        {
+            return PartialView("AddTeacher");
+        }
+
+        [Authorize]
+        public IActionResult AddClassroom()
+        {
+            return PartialView("AddClassroom");
+        }
+
+        [Authorize]
         public IActionResult ViewSched()
         {
             return View();
