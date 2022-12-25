@@ -2,9 +2,7 @@
 @model int
 @{
     ViewData["Title"] = "Добавление расписания";
-
 }
-
 <div>
     <div class="schedule_add_item">
         <button class="btn btn-primary rounded-pill">
@@ -21,11 +19,25 @@
         <div class="schedule_add_item">
 
             <div class="schedule_add_item">
-                <label for="lesson_date">Дата пары:</label>
+                <label for="lessonDate">Дата пары:</label>
                 <input type="date" class="rounded-pill" id="lessonDate" name="lessonDate">
             </div>
             <div class="schedule_add_item">
-                <label for="subject_name">Выберите дисциплину:</label>
+                <label for="lesson">Время пары</label><br />
+                <select name="lesson" id="lesson" class="rounded-pill" required>
+                    <option value="" disabled selected>Выберите время пары</option>
+                    <option value="First">8:30 - 10:00</option>
+                    <option value="Second">10:10 - 11:40</option>
+                    <option value="Third">11:50 - 13:20</option>
+                    <option value="Fourth">14:00 - 15:30</option>
+                    <option value="Fifth">15:40 - 17:10</option>
+                    <option value="Sixth">17:20 - 18:50</option>
+                    <option value="Seventh">19:00 - 20:30</option>
+                    <option value="Eighth">20:40 - 22:10</option>
+                </select>
+            </div>
+            <div class="schedule_add_item">
+                <label for="subject">Выберите дисциплину:</label>
                 <input class="rounded-pill" list="subject_list" id="subject" name="subject_name">
                 <datalist id="subject_list">
                     <option value="Web-Технологии"></option>
@@ -34,7 +46,7 @@
                 </datalist>
             </div>
             <div class="schedule_add_item">
-                <label for="group_name">Выберите группу:</label>
+                <label for="group">Выберите группу:</label>
                 <input class="rounded-pill" list="group_list" id="group" name="group_name">
                 <datalist id="group_list">
                     <option value="ИС"></option>
@@ -43,7 +55,7 @@
                 </datalist>
             </div>
             <div class="schedule_add_item">
-                <label for="teacher_name">Выберите преподавателя:</label>
+                <label for="teacher">Выберите преподавателя:</label>
                 <input class="rounded-pill" list="teacher_list" id="teacher" name="teacher_name">
                 <datalist id="teacher_list">
                     <option value="Карлусов В.Ю."></option>
@@ -52,7 +64,7 @@
                 </datalist>
             </div>
             <div class="schedule_add_item">
-                <label for="room_name">Выберите аудиторию:</label>
+                <label for="room">Выберите аудиторию:</label>
                 <input class="rounded-pill" list="room_list" id="room" name="room_name">
                 <datalist id="room_list">
                     <option value="Б-507"></option>
@@ -75,21 +87,6 @@
                 </label>
                 <input type="radio" name="type" value="L" id="lecture" />
             </div>
-        </div>
-
-        <div class="schedule_range_item">
-            <label for="lesson">Номер пары</label><br />
-            <input type="range" min="1" max="8" step="1" id="lesson" list="lessonNumber">
-            <datalist id="lessonNumber">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-                <option>6</option>
-                <option>7</option>
-                <option>8</option>
-            </datalist>
         </div>
         <div>
             <input type="text" id="commentary" placeholder="Добавить комментарий" />

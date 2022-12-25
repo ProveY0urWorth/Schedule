@@ -1,19 +1,12 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Schv3.Models;
-using SQLitePCL;
 using System.Diagnostics;
-using System.Runtime.Serialization.DataContracts;
 
 namespace Schv3.Controllers
 {
     public class ScheduleController : Controller
     {
-        public string cMyValue = "some string here";
-
-
- 
-
         private readonly ILogger<ScheduleController> _logger;
 
         public ScheduleController(ILogger<ScheduleController> logger)
@@ -34,9 +27,7 @@ namespace Schv3.Controllers
 
         public IActionResult Schedule()
         {
-            int test = 10;
-            return View(test);
-            
+            return View();
         }
 
         public IActionResult Search()
@@ -49,9 +40,5 @@ namespace Schv3.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
-
-        //testout
-        
-
     }
 }

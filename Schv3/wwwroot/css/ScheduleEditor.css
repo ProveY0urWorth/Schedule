@@ -12,10 +12,6 @@ input[type=range] {
     cursor: pointer;
 }
 
-.schedule_range_item {
-    margin: 3vh;
-    align-content:center;
-}
 
 .adding-form{
     border:solid;
