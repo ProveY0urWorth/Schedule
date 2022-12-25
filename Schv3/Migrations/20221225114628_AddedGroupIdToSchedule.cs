@@ -40,7 +40,6 @@ namespace Schv3.Migrations
 
             migrationBuilder.DropIndex(
                 name: "IX_Schedules_Group_idGroupCode",
-                table: "Schedules");
 
             migrationBuilder.DropColumn(
                 name: "Group_idGroupCode",
