@@ -79,7 +79,6 @@ namespace Schv3.Query
                 // 1 лекция
                 // 2 практика
                 // 3 лз
-
                 string lessonType = "";
                 foreach (var item in classesforday)
                 {
@@ -120,7 +119,7 @@ namespace Schv3.Query
                 var query3 = from ClassRooms in db.Classrooms
                              where ClassRooms.Id == el.Id_Classroom
                              select ClassRooms.Name;
-                
+
                 return query3.FirstOrDefault();
             }
         }
