@@ -10,24 +10,36 @@ namespace Schv3.Query
 {
     public class FrontQuery
     {
-        public static FrontDataModel GetClassForFront (int ClassID)
+        public static FrontDataModel GetClassForFront (string date, string groupcode)
         {
             using (var db = new AppDataDbContext())
             {
                 var query = from Schedules in db.Schedules
-                            where Schedules.Id_1Class.Id == ClassID ||
-                            Schedules.Id_2Class.Id == ClassID ||
-                            Schedules.Id_3Class.Id == ClassID ||
-                            Schedules.Id_4Class.Id == ClassID ||
-                            Schedules.Id_5Class.Id == ClassID ||
-                            Schedules.Id_6Class.Id == ClassID ||
-                            Schedules.Id_7Class.Id == ClassID ||
-                            Schedules.Id_8Class.Id == ClassID 
+                            where Schedules.date == date &&
+                            Schedules.Group_id.GroupCode == groupcode
                             select Schedules;
                 var query2 = from Classes in db.Classes
-                           where Classes.Id == ClassID
+                           where 
+                           Classes.Id == query.FirstOrDefault().Id_1Class.Id ||
+                           Classes.Id == query.FirstOrDefault().Id_2Class.Id ||
+                           Classes.Id == query.FirstOrDefault().Id_3Class.Id ||
+                           Classes.Id == query.FirstOrDefault().Id_4Class.Id ||
+                           Classes.Id == query.FirstOrDefault().Id_5Class.Id ||
+                           Classes.Id == query.FirstOrDefault().Id_6Class.Id ||
+                           Classes.Id == query.FirstOrDefault().Id_7Class.Id ||
+                           Classes.Id == query.FirstOrDefault().Id_8Class.Id 
                            select Classes;
-                var sch = query.FirstOrDefault();
+                var classesforday = query2.ToList();
+
+                
+                return OutVal;
+
+            }
+            
+        }
+
+        /*
+        var sch = query.FirstOrDefault();
 
                 var query3 = from ClassRooms in db.Classrooms
                              where ClassRooms.Id == query2.FirstOrDefault().Id_Classroom
@@ -74,10 +86,6 @@ namespace Schv3.Query
                         query.FirstOrDefault().date,
                         para
                     );
-                return OutVal;
-
-            }
-            
-        }
+        */
     }
 }
