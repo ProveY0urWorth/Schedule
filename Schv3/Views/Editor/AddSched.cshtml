@@ -1,26 +1,29 @@
 ﻿<link rel="stylesheet" href="~/css/ScheduleEditor.css" asp-append-version="true" />
-@model int
+
 @{
     ViewData["Title"] = "Добавление расписания";
 }
 <div>
     <div class="schedule_add_item">
-        <button class="btn btn-primary rounded-pill">
+        <button class="btn btn-primary rounded-pill" id="AddSubjBtn" onclick="AddModal(this)">
             Добавить дисциплину
         </button>
-        <button class="btn btn-primary rounded-pill">
+        <button class="btn btn-primary rounded-pill" id="AddGroupBtn" onclick="AddModal(this)">
             Добавить группу
         </button>
-        <button class="btn btn-primary rounded-pill">
+        <button class="btn btn-primary rounded-pill" id="AddTeacherBtn" onclick="AddModal(this)">
             Добавить преподавателя
         </button>
+        <button class="btn btn-primary rounded-pill" id="AddClassroomBtn" onclick="AddModal(this)">
+            Добавить аудиторию
+        </button>
     </div>
-   <div class="adding-form">
+   <form class="adding-form">
         <div class="schedule_add_item">
 
             <div class="schedule_add_item">
                 <label for="lessonDate">Дата пары:</label>
-                <input type="date" class="rounded-pill" id="lessonDate" name="lessonDate">
+                <input type="date" class="rounded-pill" id="lessonDate" name="lessonDate" required>
             </div>
             <div class="schedule_add_item">
                 <label for="lesson">Время пары</label><br />
@@ -38,7 +41,7 @@
             </div>
             <div class="schedule_add_item">
                 <label for="subject">Выберите дисциплину:</label>
-                <input class="rounded-pill" list="subject_list" id="subject" name="subject_name">
+                <input class="rounded-pill" list="subject_list" id="subject" name="subject_name" required>
                 <datalist id="subject_list">
                     <option value="Web-Технологии"></option>
                     <option value="Методы исследования операций"></option>
@@ -47,7 +50,7 @@
             </div>
             <div class="schedule_add_item">
                 <label for="group">Выберите группу:</label>
-                <input class="rounded-pill" list="group_list" id="group" name="group_name">
+                <input class="rounded-pill" list="group_list" id="group" name="group_name" required>
                 <datalist id="group_list">
                     <option value="ИС"></option>
                     <option value="ПИ"></option>
@@ -56,7 +59,7 @@
             </div>
             <div class="schedule_add_item">
                 <label for="teacher">Выберите преподавателя:</label>
-                <input class="rounded-pill" list="teacher_list" id="teacher" name="teacher_name">
+                <input class="rounded-pill" list="teacher_list" id="teacher" name="teacher_name" required>
                 <datalist id="teacher_list">
                     <option value="Карлусов В.Ю."></option>
                     <option value="Хохлов В.В."></option>
@@ -65,7 +68,7 @@
             </div>
             <div class="schedule_add_item">
                 <label for="room">Выберите аудиторию:</label>
-                <input class="rounded-pill" list="room_list" id="room" name="room_name">
+                <input class="rounded-pill" list="room_list" id="room" name="room_name" required>
                 <datalist id="room_list">
                     <option value="Б-507"></option>
                     <option value="Г-512"></option>
@@ -77,7 +80,7 @@
                 <label for="practicLesson">
                     Практическое занятие
                 </label>
-                <input type="radio" name="type" value="PL" id="practicLesson" />
+                <input type="radio" name="type" value="PL" id="practicLesson" required/>
                 <label for="labLesson">
                     Лабораторное занятие
                 </label>
@@ -92,11 +95,11 @@
             <input type="text" id="commentary" placeholder="Добавить комментарий" />
         </div>
         <div class="schedule_add_item">
-            <button class="btn btn-primary rounded-pill">
+            <button class="btn btn-primary rounded-pill" onsubmit="">
                 Добавить
             </button>
         </div>
-   </div>
+   </form>
     <div class="schedule_add_item">
         <button class="btn btn-primary rounded-pill">
             Просмотр(Студент)
@@ -105,4 +108,25 @@
             Просмотр(Преподаватель)
         </button>
     </div>
+    <div class="modal fade" role="dialog" id="AddFormModal" data-backdrop="static" data-keyboard="false">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="ModalClose()">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div id="AddFormModalbody" class="modal-body">
+                </div>
+                <!--
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-default mr-auto" data-dismiss="modal" onclick="ModalClose()">Отмена</button>
+                    <button type="button" class="btn btn-primary">Сохранить</button>
+                    </div>
+                -->
+            </div>
+        </div>
+    </div>
 </div>
+<script src="~/js/AddingPage.js" asp-append-version="true"></script>
