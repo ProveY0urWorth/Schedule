@@ -1,8 +1,10 @@
-﻿using Schv3.Data;
+﻿using Microsoft.AspNetCore.Mvc;
+using Schv3.Data;
 using Schv3.Models;
 
 namespace Schv3.Query
 {
+    [BindProperties]
     public class EditorQueries
     {
         //Here we input data models of entities 

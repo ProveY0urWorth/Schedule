@@ -18,7 +18,8 @@
             Добавить аудиторию
         </button>
     </div>
-   <form class="adding-form">
+    @using (Html.BeginForm("SchedulePost","Editor",FormMethod.Post))
+{
         <div class="schedule_add_item">
 
             <div class="schedule_add_item">
@@ -95,11 +96,12 @@
             <input type="text" id="commentary" placeholder="Добавить комментарий" />
         </div>
         <div class="schedule_add_item">
-            <button class="btn btn-primary rounded-pill" onsubmit="">
+            @*<input type="submit" class="btn btn-primary rounded-pill">
                 Добавить
-            </button>
+            </input>*@
+        <input type="submit" value="Добавить" class="btn btn-primary rounded-pill" />
         </div>
-   </form>
+   }
     <div class="schedule_add_item">
         <button class="btn btn-primary rounded-pill">
             Просмотр(Студент)
