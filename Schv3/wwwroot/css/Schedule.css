@@ -3,3 +3,14 @@
     border-color: black;
 }
 
+.day{
+    margin: 1vh;
+    padding: 1vh;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .halfWeek {
+        display: flex;
+    }
+}
