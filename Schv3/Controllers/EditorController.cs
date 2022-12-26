@@ -58,6 +58,8 @@ namespace Schv3.Controllers
         {
             return View();
         }
+
+        /*
         [HttpPost]
         public ActionResult SchedulePost()
         {
@@ -71,6 +73,7 @@ namespace Schv3.Controllers
             EditorQueries.CreateAny(c);
             return View("Editor");
         }
+        */
 
         [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
         public IActionResult Error()

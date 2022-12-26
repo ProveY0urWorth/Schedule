@@ -6,13 +6,14 @@ namespace Schv3.Query
     public class Requests
     {
         //get the single schedule for one day
+        
         public static Schedule GetSchedule(string date, string groupcode)
         {
             using (var db = new AppDataDbContext())
             {
                 var query = from Schedules in db.Schedules
                             where Schedules.date == date &&
-                            Schedules.Group_id.GroupCode == groupcode
+                            Schedules.Group_id == groupcode
                             select Schedules;
 
                 var sch = query.FirstOrDefault<Schedule>();
@@ -21,6 +22,7 @@ namespace Schv3.Query
                 else return null;
             }
         }
+        
 
         //====================================
 
@@ -129,7 +131,7 @@ namespace Schv3.Query
                 else return null;
             }
         }
-
+        /*
         public static List<Class> GetClassListSchSearchOnSch(Schedule search)
         {
             using (var db = new AppDataDbContext())
@@ -149,7 +151,7 @@ namespace Schv3.Query
                 else return null;
             }
         }
-
+        */
 
 
     }

@@ -17,30 +17,30 @@ namespace Schv3.Query
             {
                 var query = from Schedules in db.Schedules
                             where Schedules.date == date &&
-                            Schedules.Group_id.GroupCode == groupcode
+                            Schedules.Group_id == groupcode
                             select Schedules;
                 var query2 = from Classes in db.Classes
                            where 
-                           Classes.Id == query.FirstOrDefault().Id_1Class.Id ||
-                           Classes.Id == query.FirstOrDefault().Id_2Class.Id ||
-                           Classes.Id == query.FirstOrDefault().Id_3Class.Id ||
-                           Classes.Id == query.FirstOrDefault().Id_4Class.Id ||
-                           Classes.Id == query.FirstOrDefault().Id_5Class.Id ||
-                           Classes.Id == query.FirstOrDefault().Id_6Class.Id ||
-                           Classes.Id == query.FirstOrDefault().Id_7Class.Id ||
-                           Classes.Id == query.FirstOrDefault().Id_8Class.Id 
+                           Classes.Id == query.FirstOrDefault().Id_1Class||
+                           Classes.Id == query.FirstOrDefault().Id_2Class ||
+                           Classes.Id == query.FirstOrDefault().Id_3Class ||
+                           Classes.Id == query.FirstOrDefault().Id_4Class ||
+                           Classes.Id == query.FirstOrDefault().Id_5Class ||
+                           Classes.Id == query.FirstOrDefault().Id_6Class ||
+                           Classes.Id == query.FirstOrDefault().Id_7Class ||
+                           Classes.Id == query.FirstOrDefault().Id_8Class
                            select Classes;
                 var classesforday = query2.ToList();
                 int [] sch =
                 {
-                    query.FirstOrDefault().Id_1Class.Id,
-                    query.FirstOrDefault().Id_2Class.Id,
-                    query.FirstOrDefault().Id_3Class.Id,
-                    query.FirstOrDefault().Id_4Class.Id,
-                    query.FirstOrDefault().Id_5Class.Id,
-                    query.FirstOrDefault().Id_6Class.Id,
-                    query.FirstOrDefault().Id_7Class.Id,
-                    query.FirstOrDefault().Id_8Class.Id
+                    query.FirstOrDefault().Id_1Class,
+                    query.FirstOrDefault().Id_2Class,
+                    query.FirstOrDefault().Id_3Class,
+                    query.FirstOrDefault().Id_4Class,
+                    query.FirstOrDefault().Id_5Class,
+                    query.FirstOrDefault().Id_6Class,
+                    query.FirstOrDefault().Id_7Class,
+                    query.FirstOrDefault().Id
                 };
 
                 string para = "N/A";
@@ -91,15 +91,14 @@ namespace Schv3.Query
                             default: lessonType = "ПЗ"; break;
                     }
                 }
-
                 List<FrontDataModel> ret = new List<FrontDataModel>();
                 for(var i = 0; i < classesforday.Count; i++)
                 {
                     FrontDataModel st = new FrontDataModel(
                        classesforday.ElementAt(i).Id,
-                       classesforday.ElementAt(i).Id_Subject.Name,
-                       classesforday.ElementAt(i).Group_Code.GroupCode,
-                       classesforday.ElementAt(i).Id_Teacher.LName,
+                       classesforday.ElementAt(i).Id_Subject,
+                       classesforday.ElementAt(i).Group_Code,
+                       classesforday.ElementAt(i).Id_Teacher,
                        RoomName(classesforday.ElementAt(i)),
                        lessonType,
                        query.FirstOrDefault().date,
@@ -109,8 +108,8 @@ namespace Schv3.Query
                 }
                 return ret;
             }
+                
         }
-
         public static string RoomName(Class el)
         {
 

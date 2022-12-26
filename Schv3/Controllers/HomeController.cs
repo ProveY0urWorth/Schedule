@@ -26,14 +26,16 @@ namespace Schv3.Controllers
             test2.Post = "St Prepod";
             EditorQueries.CreateAny(test2);
 
-            */
+            
             
             var i = Requests.GetSchedule("01.01.2022", "Ис/б-20-1-о");
             var j = Requests.GetGroupCodeList();
             var k = Requests.GetTeacherList();
             var y = Requests.GetClassList();
             var z = Requests.GetClassRoomList();
+            */
             return View();
+            
         }
 
         public IActionResult Index()
