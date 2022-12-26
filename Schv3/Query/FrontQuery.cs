@@ -11,6 +11,7 @@ namespace Schv3.Query
 {
     public class FrontQuery
     {
+        /*
         public static List<FrontDataModel> GetClassForFront (string date, string groupcode)
         {
             using (var db = new AppDataDbContext())
@@ -105,11 +106,11 @@ namespace Schv3.Query
                        para
                    );
                     ret.Add( st );
-                }
+                }*./
                 return ret;
             }
-                
         }
+
         public static string RoomName(Class el)
         {
 
