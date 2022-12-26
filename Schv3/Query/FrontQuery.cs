@@ -11,7 +11,6 @@ namespace Schv3.Query
 {
     public class FrontQuery
     {
-        /*
         public static List<FrontDataModel> GetClassForFront (string date, string groupcode)
         {
             using (var db = new AppDataDbContext())
@@ -95,18 +94,20 @@ namespace Schv3.Query
                 List<FrontDataModel> ret = new List<FrontDataModel>();
                 for(var i = 0; i < classesforday.Count; i++)
                 {
+                    var s = Requests.GetSubjectOnId(classesforday.ElementAt(i).Id_Subject);
+                    var teacher = Requests.GetTeacherOnId(classesforday.ElementAt(i).Id_Teacher);
                     FrontDataModel st = new FrontDataModel(
                        classesforday.ElementAt(i).Id,
-                       classesforday.ElementAt(i).Id_Subject,
+                       s.Name,
                        classesforday.ElementAt(i).Group_Code,
-                       classesforday.ElementAt(i).Id_Teacher,
+                       teacher.LName+" "+teacher.FName+" "+teacher.MName,
                        RoomName(classesforday.ElementAt(i)),
                        lessonType,
                        query.FirstOrDefault().date,
                        para
                    );
                     ret.Add( st );
-                }*./
+                }
                 return ret;
             }
         }

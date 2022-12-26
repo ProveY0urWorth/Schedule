@@ -1,4 +1,5 @@
 ﻿using Schv3.Data;
+using Schv3.Interfaces;
 using Schv3.Models;
 
 namespace Schv3.Query
@@ -131,28 +132,46 @@ namespace Schv3.Query
                 else return null;
             }
         }
-        /*
-        public static List<Class> GetClassListSchSearchOnSch(Schedule search)
+
+        //public static List<int> GetClassListSchSearchOnSch(int search)
+        //{
+        //    using (var db = new AppDataDbContext())
+        //    {
+        //        var query = from Class in db.Classes
+        //                    where Class.Id == search.Id_1Class ||
+        //                    Class.Id == search.Id_2Class ||
+        //                    Class.Id == search.Id_3Class ||
+        //                    Class.Id == search.Id_4Class ||
+        //                    Class.Id == search.Id_5Class ||
+        //                    Class.Id == search.Id_6Class ||
+        //                    Class.Id == search.Id_7Class ||
+        //                    Class.Id == search.Id_8Class
+        //                    select Class;
+        //        if (query.ToList<Class>() is List<Class>)
+        //            return query.ToList<int>();
+        //        else return null;
+        //    }
+        //}
+
+        public static Teacher GetTeacherOnId(int TeacherId)
         {
             using (var db = new AppDataDbContext())
             {
-                var query = from Class in db.Classes
-                            where Class.Id == search.Id_1Class.Id ||
-                            Class.Id == search.Id_2Class.Id ||
-                            Class.Id == search.Id_3Class.Id ||
-                            Class.Id == search.Id_4Class.Id ||
-                            Class.Id == search.Id_5Class.Id ||
-                            Class.Id == search.Id_6Class.Id ||
-                            Class.Id == search.Id_7Class.Id ||
-                            Class.Id == search.Id_8Class.Id
-                            select Class;
-                if (query.ToList<Class>() is List<Class>)
-                    return query.ToList<Class>();
-                else return null;
+                var query = from Teacher in db.Teachers
+                            where Teacher.Id == TeacherId
+                            select Teacher;
+                return query.FirstOrDefault();
             }
         }
-        */
-
-
+        public static Subject GetSubjectOnId(int SubjectId)
+        {
+            using (var db = new AppDataDbContext())
+            {
+                var query = from Subject in db.Subjects
+                            where Subject.Id == SubjectId
+                            select Subject;
+                return query.FirstOrDefault();
+            }
+        }
     }
 }

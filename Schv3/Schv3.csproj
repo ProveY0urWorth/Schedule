@@ -33,4 +33,20 @@
     <Folder Include="Migrations\" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Content Update="wwwroot\icons\pen.svg">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>pen.cs</LastGenOutput>
+    </Content>
+    <Content Update="wwwroot\icons\pen.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>pen.svg</DependentUpon>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
 </Project>
