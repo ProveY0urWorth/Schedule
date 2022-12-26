@@ -11,6 +11,7 @@ namespace Schv3.Query
 {
     public class FrontQuery
     {
+        /*
         public static List<FrontDataModel> GetClassForFront (string date, string groupcode)
         {
             using (var db = new AppDataDbContext())
@@ -91,7 +92,7 @@ namespace Schv3.Query
                             default: lessonType = "ПЗ"; break;
                     }
                 }
-
+                /.*
                 List<FrontDataModel> ret = new List<FrontDataModel>();
                 for(var i = 0; i < classesforday.Count; i++)
                 {
@@ -106,11 +107,12 @@ namespace Schv3.Query
                        para
                    );
                     ret.Add( st );
-                }
+                }*./
                 return ret;
             }
+                
         }
-
+        */
         public static string RoomName(Class el)
         {
 
