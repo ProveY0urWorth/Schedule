@@ -1,6 +1,16 @@
 ﻿.Schedule_table{
     border: solid;
     border-color: black;
-    background-color:gray;
 }
 
+.day{
+    margin: 1vh;
+    padding: 1vh;
+}
+
+
+@media only screen and (min-width: 768px) {
+    .halfWeek {
+        display: flex;
+    }
+}
