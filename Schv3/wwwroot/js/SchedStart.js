@@ -1,32 +1,32 @@
 ﻿function checkGroupOrFio(val) {
     console.log(val);
     if (val == "") {
-        document.getElementById("week").disabled = true;
-        document.getElementById("week").value = "";
-        document.getElementById("this_week").disabled = true;
-        document.getElementById("next_week").disabled = true;
-        document.getElementById("show_schedule").disabled = true;
+        $("#week").disabled = true;
+        $("#week").value = "";
+        $("#this_week").disabled = true;
+        $("#next_week").disabled = true;
+        $("#show_schedule").disabled = true;
     }
     else {
-        document.getElementById("week").removeAttribute("disabled");
-        document.getElementById("this_week").removeAttribute("disabled");
-        document.getElementById("next_week").removeAttribute("disabled");
+        $("#week").removeAttr("disabled");
+        $("#this_week").removeAttr("disabled");
+        $("#next_week").removeAttr("disabled");
     }
 }
 
 function checkWeek(val) {
     console.log(val);
     if (val == "") {
-        document.getElementById("search").disabled = true;;
+        $("#search").disabled = true;;
     }
     else {
-        document.getElementById("show_schedule").removeAttribute("disabled");
+        $("#show_schedule").removeAttr("disabled");
     }
 }
 
 function getWeek(val) {
     let thisYear = new Date().getFullYear();
-    let start = new Date('09/01/' + thisYear);
+    let start = new Date('08/28/' + thisYear);
     let today = new Date();
     const week = (start, today) => {
         let difference = today.getTime() - start.getTime();
@@ -34,7 +34,7 @@ function getWeek(val) {
         return total_week + val;
     }
     document.getElementById("week").value = week(start, today) + " неделя";
-    document.getElementById("show_schedule").removeAttribute("disabled");
+    $("#show_schedule").removeAttr("disabled");
     console.log(week(start, today));
 }
 

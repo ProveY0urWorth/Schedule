@@ -3,9 +3,10 @@
     border-color: black;
 }
 
-.day{
+.day, .classes{
     margin: 1vh;
     padding: 1vh;
+    display:none;
 }
 
 

@@ -36,6 +36,10 @@ namespace Schv3.Query
                         db.Groups.Add((Group)par);
                         db.SaveChanges();
                         break;
+                    case Schedule s:
+                        db.Schedules.Add((Schedule)par);
+                        db.SaveChanges();
+                        break;
                     default:
                         throw new Exception("idinahuy");
                 };

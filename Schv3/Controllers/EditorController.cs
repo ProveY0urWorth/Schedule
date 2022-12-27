@@ -71,6 +71,7 @@ namespace Schv3.Controllers
             //EditorQueries.CreateAny(s);
             //var c = new Class { Id = 0, Id_Classroom = 0,Id_Subject = 0, Id_Teacher = 0, Group_Code = "ИС/б-20-1-о", ClassType = 1 };
             //EditorQueries.CreateAny(c);
+            var sch = new Schedule {Id = 0, date = "23.12.2022", Group_id = "ИС/б-20-1-о", Id_1Class = 0, Id_2Class = 0, Id_6Class = 0, week = 18 };
             return View("SchedSucces");
         }
         
